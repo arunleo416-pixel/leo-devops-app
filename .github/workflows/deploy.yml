@@ -24,10 +24,4 @@ jobs:
 
     - name: Push Docker Image
       run: docker push leoarun/leo-app
-    - name: Set up kubectl
-      uses: azure/setup-kubectl@v3
-    - name: Deploy to Kubernetes
-      run: |
-          echo "${{ secrets.KUBE_CONFIG }}" > kubeconfig
-          export KUBECONFIG=kubeconfig
-          kubectl get nodes
+  
